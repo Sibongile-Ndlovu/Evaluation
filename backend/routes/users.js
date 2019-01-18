@@ -24,6 +24,22 @@ router.post('/register',  function(req,res,next){
   })
 })
 
+
+//UPDATE COMPLAINT
+router.put('/name/:id', (req, res) => {
+  // find and update the user
+  User.findByIdAndUpdate({ _id: req.params.id },
+    { $push: { "complaint": req.body}} ,
+    function(err,data){
+      if(!err){
+        console.log(data); 
+        return  res.status(201).json(data);
+      }
+      else return res.status(404).json(error); 
+    });
+  
+});
+
 //find user with email from angular code
 router.post('/login', function(req,res,next){
    let promise = User.findOne({email:req.body.email}).exec();

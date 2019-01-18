@@ -19,6 +19,9 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { CreateComplaintComponent } from './create-complaint/create-complaint.component';
 import { DataTableComponent } from './data-table/data-table.component';
+import { AgentComponent } from './agent/agent.component';
+import { ListComplaintsComponent } from './list-complaints/list-complaints.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -31,7 +34,9 @@ import { DataTableComponent } from './data-table/data-table.component';
     NavBarComponent,
     FooterComponent,
     CreateComplaintComponent,
-    DataTableComponent
+    DataTableComponent,
+    AgentComponent,
+    ListComplaintsComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +55,8 @@ import { DataTableComponent } from './data-table/data-table.component';
     MatSortModule,
     MatTreeModule,
     MatDialogModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    CommonModule,
 
   ],
   providers: [MyserviceService],
