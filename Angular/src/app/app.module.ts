@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Material Design
-import {MatCardModule, MatInputModule, MatFormFieldModule, MatButtonModule, MatIconModule, MatToolbarModule, MatTableModule, MatSortModule} from '@angular/material';
+import {MatCardModule, MatInputModule, MatFormFieldModule, MatButtonModule, MatIconModule, MatToolbarModule, MatTableModule, MatSortModule, MatTreeModule, MatDialogModule, MatPaginatorModule} from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 
@@ -16,7 +16,9 @@ import { MyserviceService } from './myservice.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { ComplaintComponent } from './complaint/complaint.component';
+import { FooterComponent } from './footer/footer.component';
+import { CreateComplaintComponent } from './create-complaint/create-complaint.component';
+import { DataTableComponent } from './data-table/data-table.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { ComplaintComponent } from './complaint/complaint.component';
     DashboardComponent,
     HomeComponent,
     NavBarComponent,
-    ComplaintComponent
+    FooterComponent,
+    CreateComplaintComponent,
+    DataTableComponent
   ],
   imports: [
     BrowserModule,
@@ -43,10 +47,15 @@ import { ComplaintComponent } from './complaint/complaint.component';
     HttpClientModule,
     MatToolbarModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatTreeModule,
+    MatDialogModule,
+    MatPaginatorModule
+
   ],
   providers: [MyserviceService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[CreateComplaintComponent]
 })
 
 export class AppModule { }
